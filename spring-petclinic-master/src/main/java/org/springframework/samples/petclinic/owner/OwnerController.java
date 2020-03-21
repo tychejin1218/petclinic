@@ -109,20 +109,25 @@ class OwnerController {
 	@GetMapping("/owners")
 	public String processFindForm(Owner owner, BindingResult result, Map<String, Object> model) {
 
+		// allow parameterless GET request for /owners to return all records
 		if (owner.getFirstName() == null) {
 			owner.setFirstName("");
 		}
 
+		// find owners by first name
 		Collection<Owner> results = this.owners.findByFirstName(owner.getFirstName());
 		if (results.isEmpty()) {
+			// no owners found
 			result.rejectValue("firstName", "notFound", "not found");
 			return "owners/findOwners";
 		}
 		else if (results.size() == 1) {
+			// 1 owner found
 			owner = results.iterator().next();
 			return "redirect:/owners/" + owner.getId();
 		}
 		else {
+			// multiple owners found
 			model.put("selections", results);
 			return "owners/ownersList";
 		}
