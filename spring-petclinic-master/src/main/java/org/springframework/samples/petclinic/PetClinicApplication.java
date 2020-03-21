@@ -27,7 +27,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication(proxyBeanMethods = false)
 public class PetClinicApplication {
-
+	
+	/** 
+	 * Java Application으로 Main Method를 실행하려면  Maven generate-resources, Pakcag을 먼저 실행하여 패키지에 필요한 자원을 생성한 후 실행애햐 합니다.
+	 * 	
+	 * ex) css 생성
+	 *  - target/classes/static/resources/css/petclinic.css
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
