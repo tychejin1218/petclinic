@@ -3,4 +3,4 @@
 - #### 내용
   - ##### IoC, AOP, PSA
 
-- #### github - https://github.com/spring-projects/spring-mvc-showcase
+- #### github - https://github.com/spring-projects/spring-petclinic
